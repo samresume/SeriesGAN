@@ -1,16 +1,4 @@
-"""Time-series Generative Adversarial Networks (TimeGAN) Codebase.
-
-Reference: Jinsung Yoon, Daniel Jarrett, Mihaela van der Schaar, 
-"Time-series Generative Adversarial Networks," 
-Neural Information Processing Systems (NeurIPS), 2019.
-
-Paper link: https://papers.nips.cc/paper/8789-time-series-generative-adversarial-networks
-
-Last updated Date: April 24th 2020
-Code author: Jinsung Yoon (jsyoon0823@gmail.com)
-
------------------------------
-
+"""
 data_loading.py
 
 (0) MinMaxScaler: Min Max normalizer
@@ -82,21 +70,18 @@ def real_data_loading (data_name, seq_len):
   """Load and preprocess real-world datasets.
   
   Args:
-    - data_name: stock or energy
+    - data_name: stock, energy, or ECG
     - seq_len: sequence length
     
   Returns:
     - data: preprocessed data.
   """  
-  assert data_name in ['stock','energy', 'ECG', 'SWANSF']
+  assert data_name in ['stock','energy', 'ECG']
   
   if data_name == 'stock':
     ori_data = np.loadtxt('data/stock_data.csv', delimiter = ",",skiprows = 1)
   elif data_name == 'energy':
     ori_data = np.loadtxt('data/energy_data.csv', delimiter = ",",skiprows = 1)
-  elif data_name == 'SWANSF':
-    with open('data/swansf.pkl', 'rb') as f:
-        ori_data = pickle.load(f)
   elif data_name == 'ECG':
     parsed_data = []
     with open('data/ECG5000_data.txt', 'r') as file:
@@ -120,9 +105,6 @@ def real_data_loading (data_name, seq_len):
     data_transposed = data_reshaped.T
     scaled_data_transposed = MinMaxScaler(data_transposed)
     data = scaled_data_transposed.T.reshape(np_array_3d.shape[0], np_array_3d.shape[1], 1)
-        
-  elif data_name == 'SWANSF': 
-    data = ori_data
     
   else:
     # Flip the data to make chronological data
