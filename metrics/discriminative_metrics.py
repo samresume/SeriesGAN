@@ -1,5 +1,5 @@
 """
-predictive_metrics.py
+discriminative_metrics.py
 
 Note: Use post-hoc RNN to classify original data and synthetic data
 
