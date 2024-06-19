@@ -503,7 +503,7 @@ def seriesgan (ori_data, parameters, num_samples):
   else:
     count = int(num_samples / no)
   
-    all_generated_data = None
+    all_generated_data = []
     for c in range(count):
         Z_mb = random_generator(no, z_dim, ori_time, max_seq_len)
         generated_data_curr = sess.run(X_hat, feed_dict={Z: Z_mb, X: ori_data, T: ori_time})    
@@ -516,7 +516,8 @@ def seriesgan (ori_data, parameters, num_samples):
         generated_data = generated_data * max_val
         generated_data = generated_data + min_val
 
-        all_generated_data = np.concatenate((all_generated_data, generated_data))
+        all_generated_data.append(generated_data)
+    all_generated_data = np.concatenate(all_generated_data)
 
     return all_generated_data
                 
