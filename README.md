@@ -8,8 +8,8 @@ Current Generative Adversarial Network (GAN)-based approaches for time series ge
 
 
 ## How to Cite
-The paper associated with this repository has been accepted at BigData 2024 as a regular paper for oral presentation. We kindly ask you to provide a citation to acknowledge our work. Thank you for your support!
-available on arXiv:
+The paper associated with this repository has been accepted at BigData 2024 as a regular paper for oral presentation. We kindly ask you to provide a citation to acknowledge our work.
+Available on arXiv:
 [https://arxiv.org/abs/2410.21203](https://arxiv.org/abs/2410.21203)
 
 Here is the BibTeX citation for your reference:
