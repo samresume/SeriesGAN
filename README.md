@@ -21,8 +21,25 @@ To get started, run the tutorial notebook:
 jupyter notebook tutorial.ipynb
 ```
 
+
 ## Files
 - `seriesgan.py`: Main implementation of the SeriesGAN model.
 - `data_loading.py`: Functions for loading and preprocessing data.
 - `utils.py`: Helper utilities for the model.
+
+## Copy Right
+The paper associated with this repository has been accepted at BigData 2024 as a regular paper for oral presentation. We kindly ask you to provide a citation to acknowledge our work. Thank you for your support!
+<p><a href="https://arxiv.org/abs/2410.21203" target="_blank">arXiv: 2410.21203</a>.</p>
+
+ ```
+@misc{eskandarinasab2024seriesgan,
+      title={SeriesGAN: Time Series Generation via Adversarial and Autoregressive Learning}, 
+      author={MohammadReza EskandariNasab and Shah Muhammad Hamdi and Soukaina Filali Boubrahimi},
+      year={2024},
+      eprint={2410.21203},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2410.21203}, 
+}
+```
 
